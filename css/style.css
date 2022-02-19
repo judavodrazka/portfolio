@@ -173,7 +173,7 @@ nav a:focus {
   }
 
   nav.opened {
-    height: 17rem;
+    height: 15rem;
     transition: 0.2s 0s;
   }
 
