@@ -14,6 +14,11 @@ body {
   --select_color: #4d83a0;
   --dark_color: rgb(17, 15, 24);
   --text_color: #e5e5dc;
+  --html_logo_color: rgba(229, 77, 38, 255);
+  --css_logo_color: rgba(38, 78, 228, 255);
+  --js_logo_color: rgba(247, 223, 29, 255);
+  --bootstrap_logo_color: rgba(119, 17, 248, 255);
+  --react_logo_color: rgba(94, 218, 255, 255);
 }
 
 /*--- Header ---*/
@@ -93,13 +98,18 @@ nav a:focus {
 }
 
 /*--- Main Section ---*/
-/*---- About Me ----*/
-.about-me > h2 {
+main {
+  display: flex;
+  flex-flow: column;
+}
+
+h2 {
   text-align: center;
   font-size: 4.2em;
   margin: 50px;
 }
 
+/*---- About Me ----*/
 .about-me-wrapper {
   display: flex;
   flex-flow: row wrap;
@@ -134,7 +144,7 @@ nav a:focus {
   font-size: 5rem;
 }
 
-.cards h3 {
+article h3 {
   text-align: center;
   margin: 20px 0;
 }
@@ -166,6 +176,56 @@ nav a:focus {
   color: var(--text_color);
 }
 
+/*--- Skills ---*/
+
+.skills {
+  margin-top: 5%;
+  background: hsl(0, 0%, 96%);
+}
+
+.skills-wrapper {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.article {
+  text-align: center;
+  width: 400px;
+  font-size: 1.6em;
+  padding: 5%;
+}
+
+.skills-wrapper .fa-brands {
+  font-size: 10rem;
+  display: block;
+  transition: color 0.2s ease-in;
+}
+
+.article p {
+  text-align: justify;
+}
+
+.article:hover .fa-html5 {
+  color: var(--html_logo_color);
+}
+
+.article:hover .fa-css3-alt {
+  color: var(--css_logo_color);
+}
+
+.article:hover .fa-js {
+  color: var(--js_logo_color);
+}
+
+.article:hover .fa-bootstrap {
+  color: var(--bootstrap_logo_color);
+}
+
+.article:hover .fa-react {
+  color: var(--react_logo_color);
+}
+
 @media screen and (max-width: 600px) {
   nav {
     height: 3.8rem;
@@ -173,7 +233,7 @@ nav a:focus {
   }
 
   nav.opened {
-    height: 15rem;
+    height: 17rem;
     transition: 0.2s 0s;
   }
 
@@ -255,10 +315,12 @@ nav a:focus {
     z-index: 999;
   }
 
+  /*--- Main Section ---*/
   main > h2 {
     margin: 50px 0;
   }
 
+  /*--- About Me ---*/
   .cards {
     width: 66vw;
   }
@@ -273,6 +335,27 @@ nav a:focus {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
       inset 67vw 0 0 0.09px var(--select_color);
     color: var(--text_color);
+  }
+
+  /*--- Skills ---*/
+  .fa-html5 {
+    color: var(--html_logo_color);
+  }
+
+  .fa-css3-alt {
+    color: var(--css_logo_color);
+  }
+
+  .fa-js {
+    color: var(--js_logo_color);
+  }
+
+  .fa-bootstrap {
+    color: var(--bootstrap_logo_color);
+  }
+
+  .fa-react {
+    color: var(--react_logo_color);
   }
 }
 
