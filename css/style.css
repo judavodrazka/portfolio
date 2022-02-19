@@ -322,18 +322,18 @@ article h3 {
 
   /*--- About Me ---*/
   .cards {
-    width: 66vw;
+    width: 75vw;
   }
 
   .card-odd:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 67vw 0 0 0.09px var(--light_color);
+      inset 76vw 0 0 0.09px var(--light_color);
     color: var(--text_color);
   }
 
   .card-even:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 67vw 0 0 0.09px var(--select_color);
+      inset 76vw 0 0 0.09px var(--select_color);
     color: var(--text_color);
   }
 
