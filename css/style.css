@@ -226,6 +226,10 @@ article h3 {
   color: var(--react_logo_color);
 }
 
+.article:hover .fa-git-alt {
+  color: var(--html_logo_color);
+}
+
 @media screen and (max-width: 600px) {
   nav {
     height: 3.8rem;
@@ -360,6 +364,10 @@ article h3 {
 
   .fa-react {
     color: var(--react_logo_color);
+  }
+
+  .fa-git-alt {
+    color: var(--html_logo_color);
   }
 }
 
