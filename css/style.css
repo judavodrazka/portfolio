@@ -300,9 +300,6 @@ article h3 {
   display: flex;
   flex-flow: column;
   transition: opacity 0.2s ease 0.2s;
-}
-
-.skill-article:hover .hand-pointer {
   color: var(--light_color);
 }
 
