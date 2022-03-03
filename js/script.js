@@ -8,6 +8,14 @@ const main = document.querySelector("main");
 const mainNavLinks = document.querySelector(".main-nav-links");
 const hamburgerToggle = document.querySelector(".hamburger-menu-toggle");
 
+const articles = document.querySelectorAll(".skill-article");
+
+articles.forEach((articlesItem) => {
+  articlesItem.addEventListener("click", () => {
+    articlesItem.classList.toggle("clicked");
+  });
+});
+
 console.log(viewportHeight);
 header.style.height = `${viewportHeight}px`;
 // header.setAttribute("height", `${viewportHeight}px`);
