@@ -255,8 +255,8 @@ article h3 {
   position: absolute;
   /* display: inline; */
   transform: translateY(-25%);
-  font-size: 10em !important;
   transition: transform 0.3s ease, font-size 0.3s ease;
+  font-size: 10em !important;
 }
 
 .clicked h3 {
