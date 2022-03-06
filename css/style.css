@@ -43,10 +43,6 @@ header {
   text-align: center;
 }
 
-header.mobile {
-  background-attachment: scroll;
-}
-
 /*--- Navbar ---*/
 
 nav {

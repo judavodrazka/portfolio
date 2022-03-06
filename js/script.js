@@ -49,6 +49,7 @@ const resizeBackground = (item) => {
 
 if (viewportWidth <= 600) {
   resizeBackground(header);
+  header.style.backgroundAttachment = "fixed";
   window.addEventListener("resize", () => {
     resizeBackground(header);
   });
