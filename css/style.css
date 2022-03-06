@@ -19,6 +19,8 @@ body {
   --js_logo_color: rgba(247, 223, 29, 255);
   --bootstrap_logo_color: rgba(119, 17, 248, 255);
   --react_logo_color: rgba(94, 218, 255, 255);
+  --php_logo_color: rgba(118, 123, 179);
+  --stackoverflow_logo_color: rgba(240, 129, 38);
 }
 
 /*--- Header ---*/
@@ -31,6 +33,7 @@ header {
   background-attachment: fixed;
   background-size: cover;
   width: 100%;
+  height: 100vh;
   color: var(--text_color);
   font-size: 4vw;
   display: flex;
@@ -40,11 +43,15 @@ header {
   text-align: center;
 }
 
+header.mobile {
+  background-attachment: scroll;
+}
+
 /*--- Navbar ---*/
 
 nav {
   position: sticky;
-  top: 0;
+  top: -1px;
   right: 0;
   left: 0;
   display: flex;
@@ -207,36 +214,6 @@ article h3 {
   text-align: justify;
 }
 
-.skill-article:hover .fa-html5,
-.clicked .fa-html5 {
-  color: var(--html_logo_color);
-}
-
-.skill-article:hover .fa-css3-alt,
-.clicked .fa-css3-alt {
-  color: var(--css_logo_color);
-}
-
-.skill-article:hover .fa-js,
-.clicked .fa-js {
-  color: var(--js_logo_color);
-}
-
-.skill-article:hover .fa-bootstrap,
-.clicked .fa-bootstrap {
-  color: var(--bootstrap_logo_color);
-}
-
-.skill-article:hover .fa-react,
-.clicked .fa-react {
-  color: var(--react_logo_color);
-}
-
-.skill-article:hover .fa-git-alt,
-.clicked .fa-git-alt {
-  color: var(--html_logo_color);
-}
-
 .skill-article {
   position: relative;
   margin-bottom: 7%;
@@ -269,7 +246,7 @@ article h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18em;
+  font-size: 16em;
   height: 70%;
   transition: transform 0.3s ease 0.1s, font-size 0.3s ease 0.1s;
 }
@@ -278,7 +255,7 @@ article h3 {
   position: absolute;
   /* display: inline; */
   transform: translateY(-25%);
-  font-size: 10em;
+  font-size: 10em !important;
   transition: transform 0.3s ease, font-size 0.3s ease;
 }
 
@@ -293,9 +270,9 @@ article h3 {
 }
 
 .hand-pointer {
-  font-size: 2.5em;
+  font-size: 2.2em;
   position: absolute;
-  bottom: 5%;
+  bottom: 2%;
   right: 5%;
   display: flex;
   flex-flow: column;
@@ -312,9 +289,47 @@ article h3 {
   transition: opacity 0.2s ease 0s;
 }
 
+/* colors for skills */
+.brand-logo.fa-html5 {
+  color: var(--html_logo_color);
+}
+
+.brand-logo.fa-css3-alt {
+  color: var(--css_logo_color);
+}
+
+.brand-logo.fa-js {
+  color: var(--js_logo_color);
+}
+
+.brand-logo.fa-bootstrap {
+  color: var(--bootstrap_logo_color);
+  font-size: 13em;
+}
+
+.brand-logo.fa-react {
+  color: var(--react_logo_color);
+  font-size: 14em;
+}
+
+.brand-logo.fa-git-alt {
+  color: var(--html_logo_color);
+}
+
+.brand-logo.fa-php {
+  color: var(--php_logo_color);
+  font-size: 13em;
+}
+
+.brand-logo.fa-stack-overflow {
+  color: var(--stackoverflow_logo_color);
+  font-size: 13em;
+}
+
 /*--- Media Queries ---*/
 
 @media screen and (max-width: 600px) {
+  /* - vw<600px Navbar - */
   nav {
     height: 3.8rem;
     transition: 0.2s 0.1s;
@@ -403,12 +418,12 @@ article h3 {
     z-index: 999;
   }
 
-  /*--- Main Section ---*/
+  /* - vw<600px Main - */
   main > h2 {
     margin: 50px 0;
   }
 
-  /*--- About Me ---*/
+  /* - vw<600px About - */
   .cards {
     width: 80vw;
   }
@@ -425,41 +440,14 @@ article h3 {
     color: var(--text_color);
   }
 
-  /*--- Skills ---*/
+  /* - vw<600px Skills - */
   .skill-article {
     width: 80vw;
-  }
-
-  .fa-html5 {
-    color: var(--html_logo_color);
-  }
-
-  .fa-css3-alt {
-    color: var(--css_logo_color);
-  }
-
-  .fa-js {
-    color: var(--js_logo_color);
-  }
-
-  .fa-bootstrap {
-    color: var(--bootstrap_logo_color);
-  }
-
-  .fa-react {
-    color: var(--react_logo_color);
-  }
-
-  .fa-git-alt {
-    color: var(--html_logo_color);
   }
 }
 
 @media screen and (min-width: 770px) {
-  /* .main-nav-links {
-    width: auto;
-  } */
-
+  /* - 600px<vw<770px About - */
   .cards {
     width: 40vw;
   }
@@ -476,33 +464,50 @@ article h3 {
     color: var(--text_color);
   }
 
-  @media screen and (min-width: 1000px) {
-    .main-nav-links {
-      width: auto;
-    }
+  /* - 600px<vw<770px Skills - */
+  .skills-wrapper {
+    flex-flow: row wrap;
+    align-items: stretch;
+    justify-content: space-evenly;
   }
 
-  @media screen and (min-width: 1200px) {
-    .about-me-wrapper {
-      justify-content: space-evenly;
-      gap: 0;
-    }
+  .skill-article {
+    width: 40vw;
+  }
+}
 
-    .cards {
-      width: 22vw;
-      padding: 2.5%;
-    }
+@media screen and (min-width: 1000px) {
+  .main-nav-links {
+    width: auto;
+  }
+}
 
-    .card-odd:hover {
-      box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-        inset 23vw 0 0 0.09px var(--light_color);
-      color: var(--text_color);
-    }
+@media screen and (min-width: 1200px) {
+  /* - 1200px<vw About - */
+  .about-me-wrapper {
+    gap: 0;
+  }
 
-    .card-even:hover {
-      box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-        inset 23vw 0 0 0.09px var(--select_color);
-      color: var(--text_color);
-    }
+  .cards {
+    width: 22vw;
+    padding: 2.5%;
+  }
+
+  .card-odd:hover {
+    box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
+      inset 23vw 0 0 0.09px var(--light_color);
+    color: var(--text_color);
+  }
+
+  .card-even:hover {
+    box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
+      inset 23vw 0 0 0.09px var(--select_color);
+    color: var(--text_color);
+  }
+
+  /* - 1200px<vw Skills - */
+  .skill-article {
+    width: 22vw;
+    padding: 2.5%;
   }
 }

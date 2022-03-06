@@ -6,9 +6,14 @@ const header = document.querySelector("header");
 const navbar = document.querySelector("nav");
 const main = document.querySelector("main");
 const mainNavLinks = document.querySelector(".main-nav-links");
+const navLinks = document.querySelectorAll(".main-nav-links>li>a");
 const hamburgerToggle = document.querySelector(".hamburger-menu-toggle");
 
 const articles = document.querySelectorAll(".skill-article");
+
+if (viewportWidth <= 600) {
+  header.classList.add("mobile");
+}
 
 articles.forEach((articlesItem) => {
   articlesItem.addEventListener("click", () => {
@@ -16,8 +21,7 @@ articles.forEach((articlesItem) => {
   });
 });
 
-console.log(viewportHeight);
-header.style.height = `${viewportHeight}px`;
+// header.style.height = `${viewportHeight}px`;
 // header.setAttribute("height", `${viewportHeight}px`);
 
 const options = {
@@ -26,9 +30,18 @@ const options = {
   rootMargin: "-5px",
 };
 
-hamburgerToggle.addEventListener("click", () => {
+const toggleOpenedClass = () => {
   mainNavLinks.classList.toggle("opened");
   hamburgerToggle.classList.toggle("opened");
   navbar.classList.toggle("opened");
-  mainNavLinks.classList.toggle("closed");
+};
+
+hamburgerToggle.addEventListener("click", () => {
+  toggleOpenedClass();
+});
+
+navLinks.forEach((navLink) => {
+  navLink.addEventListener("click", () => {
+    toggleOpenedClass();
+  });
 });
