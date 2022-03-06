@@ -1,5 +1,5 @@
-const viewportHeight = window.innerHeight;
-const viewportWidth = window.innerWidth;
+let viewportHeight = window.innerHeight;
+let viewportWidth = window.innerWidth;
 
 const body = document.querySelector("body");
 const header = document.querySelector("header");
@@ -10,10 +10,6 @@ const navLinks = document.querySelectorAll(".main-nav-links>li>a");
 const hamburgerToggle = document.querySelector(".hamburger-menu-toggle");
 
 const articles = document.querySelectorAll(".skill-article");
-
-if (viewportWidth <= 600) {
-  header.classList.add("mobile");
-}
 
 articles.forEach((articlesItem) => {
   articlesItem.addEventListener("click", () => {
@@ -45,3 +41,17 @@ navLinks.forEach((navLink) => {
     toggleOpenedClass();
   });
 });
+
+const resizeBackground = (item) => {
+  viewportHeight = window.innerHeight;
+  item.style.height = `${viewportHeight + 60}px`;
+};
+
+if (viewportWidth <= 600) {
+  resizeBackground(header);
+  window.addEventListener("resize", () => {
+    resizeBackground(header);
+  });
+} else {
+  header.style.height = "100vh";
+}
