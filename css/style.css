@@ -10,9 +10,9 @@
 body {
   font-size: 62.5%;
   /* overflow-x: hidden; */
-  --light_color: #743c8f;
-  --select_color: #4d83a0;
-  --dark_color: rgb(17, 15, 24);
+  --purple_color: #743c8f;
+  --blue_color: #4d83a0;
+  --dark_color: #110f18;
   --text_color: #e5e5dc;
   --html_logo_color: rgba(229, 77, 38, 255);
   --css_logo_color: rgba(38, 78, 228, 255);
@@ -58,7 +58,7 @@ nav {
   transition: box-shadow 1s ease-in-out;
   flex-flow: wrap;
   gap: 1rem;
-  box-shadow: inset 0 -5px var(--light_color);
+  box-shadow: inset 0 -5px var(--purple_color);
   background: var(--dark_color);
   z-index: 9999;
 }
@@ -94,7 +94,7 @@ nav a:visited {
 
 nav a:hover,
 nav a:focus {
-  color: var(--select_color);
+  color: var(--blue_color);
 }
 
 .hamburger-menu-toggle {
@@ -155,28 +155,28 @@ article h3 {
 
 .card-odd {
   box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-    inset 7px 0 0 0 var(--light_color);
+    inset 7px 0 0 0 var(--purple_color);
 }
 
 .card-even {
   box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-    inset 7px 0 0 0 var(--select_color);
+    inset 7px 0 0 0 var(--blue_color);
 }
 
 .card-odd:hover {
   box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-    inset 401px 0 0 0.09px var(--light_color);
+    inset 401px 0 0 0.09px var(--purple_color);
   color: var(--text_color);
 }
 
 /* .card-odd:hover .fas {
   transition: color 0.2s ease-in-out;
-  color: var(--select_color);
+  color: var(--blue_color);
 } */
 
 .card-even:hover {
   box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-    inset 401px 0 0 0.09px var(--select_color);
+    inset 401px 0 0 0.09px var(--blue_color);
   color: var(--text_color);
 }
 
@@ -213,7 +213,7 @@ article h3 {
 .skill-article {
   position: relative;
   margin-bottom: 7%;
-  border: solid 3px var(--select_color);
+  border: solid 3px var(--blue_color);
   border-radius: 5px;
   background: white;
   box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55);
@@ -273,7 +273,7 @@ article h3 {
   display: flex;
   flex-flow: column;
   transition: opacity 0.2s ease 0.2s;
-  color: var(--light_color);
+  color: var(--purple_color);
 }
 
 .hand-pointer span {
@@ -317,9 +317,71 @@ article h3 {
   font-size: 13em;
 }
 
+.threejs-span {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 25%;
+  transition: transform 0.3s ease 0.1s, font-size 0.3s ease 0.1s;
+}
+
+.threejs-logo {
+  width: 60%;
+  transition: width 0.3s ease 0.1s, font-size 0.3s ease 0.1s;
+}
+
+.clicked .threejs-span {
+  transform: translateY(-17%);
+  transition: transform 0.3s ease, font-size 0.3s ease;
+}
+
+.clicked .threejs-logo {
+  width: 40%;
+  transition: width 0.3s ease, font-size 0.3s ease;
+}
+
 .brand-logo.fa-stack-overflow {
   color: var(--stackoverflow_logo_color);
   font-size: 13em;
+}
+
+/*--- Projects ---*/
+
+.projects-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* .project-card {
+  width: 60vw;
+  height: 60vw;
+} */
+
+.project-card iframe {
+  width: 100%;
+  height: 100%;
+}
+
+.project-card.cukraren123-project {
+  width: 80vw;
+  height: 80vw;
+  display: flex;
+  align-items: center;
+  flex-flow: column;
+  border: 2px solid lime;
+}
+
+.cukraren123-project > a {
+  width: 80%;
+  height: 80%;
+  background-image: url("../media/cukraren123-card.png");
+  background-size: 100%;
+}
+
+.links-div {
+  justify-self: flex-end;
 }
 
 /*--- Media Queries ---*/
@@ -426,19 +488,35 @@ article h3 {
 
   .card-odd:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 81vw 0 0 0.09px var(--light_color);
+      inset 81vw 0 0 0.09px var(--purple_color);
     color: var(--text_color);
   }
 
   .card-even:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 81vw 0 0 0.09px var(--select_color);
+      inset 81vw 0 0 0.09px var(--blue_color);
     color: var(--text_color);
   }
 
   /* - vw<600px Skills - */
   .skill-article {
     width: 80vw;
+  }
+
+  .threejs-span {
+    top: 15%;
+  }
+
+  .threejs-logo {
+    width: 50%;
+  }
+
+  .clicked .threejs-span {
+    transform: translateY(-5%);
+  }
+
+  .clicked .threejs-logo {
+    width: 33%;
   }
 }
 
@@ -450,13 +528,13 @@ article h3 {
 
   .card-odd:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 41vw 0 0 0.09px var(--light_color);
+      inset 41vw 0 0 0.09px var(--purple_color);
     color: var(--text_color);
   }
 
   .card-even:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 41vw 0 0 0.09px var(--select_color);
+      inset 41vw 0 0 0.09px var(--blue_color);
     color: var(--text_color);
   }
 
@@ -470,11 +548,43 @@ article h3 {
   .skill-article {
     width: 40vw;
   }
+
+  .threejs-span {
+    top: 25%;
+  }
+
+  .threejs-logo {
+    width: 55%;
+  }
+
+  .clicked .threejs-span {
+    transform: translateY(-16%);
+  }
+
+  .clicked .threejs-logo {
+    width: 40%;
+  }
 }
 
 @media screen and (min-width: 1000px) {
   .main-nav-links {
     width: auto;
+  }
+
+  .threejs-span {
+    top: 20%;
+  }
+
+  .threejs-logo {
+    width: 55%;
+  }
+
+  .clicked .threejs-span {
+    transform: translateY(-10%);
+  }
+
+  .clicked .threejs-logo {
+    width: 33%;
   }
 }
 
@@ -491,13 +601,13 @@ article h3 {
 
   .card-odd:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 23vw 0 0 0.09px var(--light_color);
+      inset 23vw 0 0 0.09px var(--purple_color);
     color: var(--text_color);
   }
 
   .card-even:hover {
     box-shadow: 1px 3px 7px 0.1px rgba(0, 0, 0, 0.55),
-      inset 23vw 0 0 0.09px var(--select_color);
+      inset 23vw 0 0 0.09px var(--blue_color);
     color: var(--text_color);
   }
 
@@ -505,5 +615,21 @@ article h3 {
   .skill-article {
     width: 22vw;
     padding: 2.5%;
+  }
+
+  .threejs-span {
+    top: 25%;
+  }
+
+  .threejs-logo {
+    width: 60%;
+  }
+
+  .clicked .threejs-span {
+    transform: translateY(-17%);
+  }
+
+  .clicked .threejs-logo {
+    width: 45%;
   }
 }
