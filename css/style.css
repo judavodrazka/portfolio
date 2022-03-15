@@ -327,7 +327,7 @@ article h3 {
 }
 
 .threejs-logo {
-  width: 60%;
+  width: 13em;
   transition: width 0.3s ease 0.1s, font-size 0.3s ease 0.1s;
 }
 
@@ -622,7 +622,7 @@ article h3 {
   }
 
   .threejs-logo {
-    width: 60%;
+    width: 13em;
   }
 
   .clicked .threejs-span {
@@ -630,6 +630,6 @@ article h3 {
   }
 
   .clicked .threejs-logo {
-    width: 45%;
+    width: 9em;
   }
 }
