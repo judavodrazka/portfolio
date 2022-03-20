@@ -350,6 +350,7 @@ article h3 {
 
 .projects-wrapper {
   display: flex;
+  flex-flow: column;
   justify-content: center;
   align-items: center;
 }
@@ -364,24 +365,46 @@ article h3 {
   height: 100%;
 }
 
-.project-card.cukraren123-project {
+.project-card {
   width: 80vw;
   height: 80vw;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-flow: column;
   border: 2px solid lime;
+  box-shadow: inset 100vw 0 rgba(75, 75, 75, 0.66);
+  background-size: cover;
+  margin-bottom: 1.5em;
 }
 
-.cukraren123-project > a {
+.project-card > a {
   width: 80%;
   height: 80%;
+}
+
+.papasform-project {
+  background-image: url("../media/papasform-card.png");
+}
+
+.cukraren123-project {
   background-image: url("../media/cukraren123-card.png");
-  background-size: 100%;
 }
 
 .links-div {
-  justify-self: flex-end;
+  font-size: 12em;
+}
+
+.links-div a {
+  color: var(--text_color);
+}
+
+.links-div a:visited {
+  color: var(--text_color);
+}
+
+.links-div a:hover {
+  color: var(--dark_color);
 }
 
 /*--- Media Queries ---*/
